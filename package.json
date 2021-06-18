@@ -1,0 +1,9 @@
+{
+  "name": "com.rikoo.triggerable",
+  "displayName": "Triggerables",
+  "version": "0.1.0",
+  "description": "This package allows you to easily add interactivity to your game",
+  "keywords": [
+    "utility"
+  ]
+}
