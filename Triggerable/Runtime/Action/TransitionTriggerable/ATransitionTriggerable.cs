@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace com.rikoo.triggerable.Triggerable.Runtime.Action.TransitionTriggerable
@@ -13,7 +14,10 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Action.TransitionTriggerable
         private void Awake()
         {
             InitVariables();
+            Initialize();
         }
+
+        protected abstract void Initialize();
 
         private void InitVariables()
         {
