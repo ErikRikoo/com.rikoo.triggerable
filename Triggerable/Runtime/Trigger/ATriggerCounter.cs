@@ -2,7 +2,7 @@
 
 namespace com.rikoo.triggerable.Triggerable.Runtime.Trigger
 {
-    public abstract class BaseTriggerCounter : BaseTrigger
+    public abstract class ATriggerCounter : BaseTrigger
     {
         protected abstract void OnCountChanged(int newCount, int delta);
 
@@ -21,7 +21,7 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Trigger
 
         private void CheckColliderAndAddDelta(Collider other, int delta)
         {
-            if (FilterInstance.IsColliderValid(other))
+            if (Filter.IsColliderValid(other))
             {
                 m_Count += delta;
                 OnCountChanged(m_Count, delta);

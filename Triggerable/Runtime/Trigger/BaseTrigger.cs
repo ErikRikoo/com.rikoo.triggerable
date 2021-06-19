@@ -9,24 +9,26 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Trigger
     public class BaseTrigger : UnityEngine.MonoBehaviour
     {
         [SerializeField] private UnityEngine.Object m_TriggerableObject;
-        private ITriggerable m_InterfaceInstance;
+        private ITriggerable m_TriggerableInstance;
 
-        protected ITriggerable InterfaceInstance => m_InterfaceInstance;
+        protected ITriggerable Triggerable => m_TriggerableInstance;
         
         [SerializeField] private UnityEngine.Object m_FilterObject;
         private IColliderFilter m_FilterInstance;
 
-        protected IColliderFilter FilterInstance => m_FilterInstance;
+        protected IColliderFilter Filter => m_FilterInstance;
 
         private void Awake()
         {
-            InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_TriggerableObject, out m_InterfaceInstance);
+            InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_TriggerableObject, out m_TriggerableInstance);
             InterfaceUtilities<IColliderFilter>.TryCastObjectToInstance(m_FilterObject, out m_FilterInstance);
+            Debug.Assert(m_TriggerableInstance != null, "Triggerable instance should not be null at this point", this);
+            Debug.Assert(m_FilterInstance != null, "Filter instance should not be null at this point", this);
         }
 
         private void OnValidate()
         {
-            if (!InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_TriggerableObject, out m_InterfaceInstance))
+            if (!InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_TriggerableObject, out m_TriggerableInstance))
             {
                 if (m_TriggerableObject != null)
                 {

@@ -2,6 +2,8 @@
 {
     public interface ITriggerable
     {
-        
+        void OnTriggerOn();
+
+        void OnTriggerDown();
     }
 }

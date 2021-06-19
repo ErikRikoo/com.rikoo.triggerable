@@ -21,6 +21,7 @@ Add the following to your `manifest.json` file (which is under your project loca
 {
   "dependancies": {
     ...
+    "com.rikoo.interface-utilities": "https://github.com/ErikRikoo/com.rikoo.interface-utilities.git",
     "com.rikoo.triggerable": "https://github.com/ErikRikoo/com.rikoo.triggerable",
     ...
   }
