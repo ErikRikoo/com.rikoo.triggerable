@@ -27,6 +27,7 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Action.Multiple
         
         private void Awake()
         {
+            InitTriggerables();
             for (var i = 0; i < m_ObjectInstances.Length; i++)
             {
                 InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_ObjectInstances[i], out m_TriggerableInstances[i]);
@@ -35,9 +36,15 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Action.Multiple
 
         private void OnValidate()
         {
+            if (m_ObjectInstances == null)
+            {
+                return;
+            }
+
+            InitTriggerables();
             for (var i = 0; i < m_ObjectInstances.Length; i++)
             {
-                if (InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_ObjectInstances[i],
+                if (!InterfaceUtilities<ITriggerable>.TryCastObjectToInstance(m_ObjectInstances[i],
                     out m_TriggerableInstances[i]))
                 {
                     if (m_ObjectInstances[i] != null)
@@ -46,6 +53,11 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Action.Multiple
                     }
                 }
             }
+        }
+
+        private void InitTriggerables()
+        {
+            m_TriggerableInstances = new ITriggerable[m_ObjectInstances.Length];
         }
     }
 }

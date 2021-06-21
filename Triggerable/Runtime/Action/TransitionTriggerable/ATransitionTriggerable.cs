@@ -30,13 +30,13 @@ namespace com.rikoo.triggerable.Triggerable.Runtime.Action.TransitionTriggerable
         public override void OnTriggerOn()
         {
             StopCurrentCoroutineIfPossible();
-            StartCoroutine(TransitionCoroutine(false));
+            m_CurrentActionCoroutine = StartCoroutine(TransitionCoroutine(false));
         }
 
         public override void OnTriggerDown()
         {
             StopCurrentCoroutineIfPossible();
-            StartCoroutine(TransitionCoroutine(true));
+            m_CurrentActionCoroutine = StartCoroutine(TransitionCoroutine(true));
         }
 
         private void StopCurrentCoroutineIfPossible()
