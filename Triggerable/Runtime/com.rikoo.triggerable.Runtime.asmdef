@@ -1,0 +1,15 @@
+{
+    "name": "com.rikoo.triggerable.Runtime",
+    "references": [
+        "GUID:7470dcdb22f558e49bb511d2624bcd12"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
