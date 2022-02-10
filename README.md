@@ -53,6 +53,45 @@ follow this steps:
 - Package should be updated
 
 ## Contents
+This package allows you to easily setup Trigger -> Action systems. 
+Like a Pressure Plate which would trigger the opening of a door.
+It is splitted into three parts:
+- Triggers
+- Actions
+- Collider Filters
+
+### Triggers
+This part is all about detecting an object into a trigger with some special conditions 
+if needed. Then it will run the given **Action**.
+- **Minimum Count Trigger** will allow you to trigger an action if a minimum number 
+of elements are in the trigger.
+
+### Actions
+This is all the **Actions** that can be run after a trigger.
+- **Multiple Triggerable** allows you to run multiple actions at once.
+- **Logging ...** is there just to print some message in the console.
+- **Animator Triggerable** will allow you to change a particular parameter of an animator.
+You will have it for:
+  - The float
+  - The bool
+  - the int
+- **Transition Triggerable** are all about smoothing some value into another. For now, you have:
+  - **Position** that will smooth from a start position to an End.
+
+### Collider Filters
+You will find a Collider Filter in each Trigger instance. 
+It will allow you to check the in element and know if you want to trigger or not.
+We can split into two parts:
+- Simple
+- Multiple
+
+The **Simple** contains:
+- **Direct Bool Filter** that will just always says that the element is valid if set to true
+or invalid if set to false.
+- **Layer Filter** will filter according to a given Physic Layer.
+- **Tag Filter** will do the same but on object tags.
+- **Collider With Component** allows you with inheritance to check if the element 
+has a particular component.
 
 
 ## Suggestions
